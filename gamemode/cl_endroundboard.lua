@@ -353,7 +353,7 @@ function GM:OpenEndRoundMenu()
 			local settings = GAMEMODE:GetRoundSettings()
 			local roundTime = settings.NextRoundTime or 30
 			local time = math.max(0, roundTime - GAMEMODE:GetStateRunningTime())
-			draw.SimpleText("Next round in " .. math.ceil(time), "RobotoHUD-20", w - 4, 0, col, 2)
+			draw.SimpleText("Prochaine partie dans " .. math.ceil(time), "RobotoHUD-20", w - 4, 0, col, 2)
 		end
 	end
 
@@ -460,7 +460,7 @@ function GM:EndRoundMenuResults(res)
 	menu.ChatList:Clear()
 	menu.ResultList:Clear()
 	if res.reason == 2 || res.reason == 3 then
-		menu.WinningTeam:SetText(team.GetName(res.reason) .. " win!")
+		menu.WinningTeam:SetText(team.GetName(res.reason) .. " gagne !")
 		menu.WinningTeam:SetColor(team.GetColor(res.reason))
 	else
 		menu.WinningTeam:SetText("Round tied")

@@ -43,7 +43,7 @@ function GM:ChangeMapTo(map)
 	end
 	print("[Prophunters] Rotate changing map to " .. map)
 	local ct = ChatText()
-	ct:Add("Changing map to " .. map)
+	ct:Add("Changemen de map pour " .. map)
 	ct:SendAll()
 	hook.Call("OnChangeMap", GAMEMODE)
 	timer.Simple(5, function ()
@@ -171,9 +171,9 @@ function GM:MapVoteThink()
 				self:ChangeMapTo(table.Random(maps))
 			else
 				local ct = ChatText()
-				ct:Add("Map change failed, not enough votes")
+				ct:Add("Le changement de la carte a échoué, il n'y pas assez de votes.")
 				ct:SendAll()
-				print("Map change failed, not enough votes")
+				print("Le changement de la carte a échoué, il n'y pas assez de votes.")
 				self:SetGameState(0)
 			end
 		end
@@ -233,7 +233,7 @@ concommand.Add("ph_votemap", function (ply, com, args)
 			end
 		end
 		if !found then
-			ply:ChatPrint("Invalid map " .. args[1])
+			ply:ChatPrint("Map non valide " .. args[1])
 			return
 		end
 

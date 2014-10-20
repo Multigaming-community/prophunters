@@ -13,18 +13,32 @@ local function addHelpText(heading, size, text, color)
 end
 
 
-addHelpText("Intro", 1, [[
-Prop Hunters is a gamemode based on the classic Prop Hunt. I've added better looks, more features and lots of fixes to gameplay.
+addHelpText("Français", 1, [[
+ • LES PROPS •
+	► Objectifs
+		Le but des props est de ce cacher des hunters et de ne pas se faire tuer.
+	► Les contrôles
+		CLIC GAUCHE : Transformation en objet
+		C : Bloque la rotation de votre objet
+		F3 : Ouvre le menu des taunt
 
+ • LES HUNTERS •
+	► Objectifs
+		L'objectif des hunters est de trouver et de tuer tous les props.
+]])
 
-==CONTROLS==
-LEFT CLICK - Disguises as the prop you are looking at
-C - Locks your prop's rotation when disguised
-F3 - Taunt
+addHelpText("English", 2, [[
+ • PROPS •
+	► Objectives
+		The aim of the props is to hide from the hunters and not get killed.
+	► Controls
+		LEFT CLICK : Disguises as the prop you are looking at
+		C : Locks your prop's rotation when disguised
+		F3 : Taunt
 
-==OBJECTIVES==
-The aim of the hunters is to find and kill all the props.
-The aim of the props is to hide from the hunters and not get killed.
+ • HUNTERS •
+	► Objectives
+		The aim of the hunters is to find and kill all the props.
 ]])
 
 local function colMul(color, mul)

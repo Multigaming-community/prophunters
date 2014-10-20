@@ -2,10 +2,10 @@ GM.Name 	= "Prophunters"
 GM.Author 	= "MechanicalMind"
 // Credits to waddlesworth for the logo and icon
 GM.Email 	= ""
-GM.Website 	= "http://codingconcoctions.com/"
-GM.Version 	= "1.2.1"
+GM.Website 	= ""
+GM.Version 	= "0.1fr"
 
-team.SetUp(1, "Spectators", Color(120, 120, 120))
+team.SetUp(1, "Spectateurs", Color(120, 120, 120))
 team.SetUp(2, "Hunters", Color(255, 150, 50))
 team.SetUp(3, "Props", Color(50, 150, 255))
 

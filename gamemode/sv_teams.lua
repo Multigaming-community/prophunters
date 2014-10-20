@@ -21,7 +21,7 @@ concommand.Add("car_jointeam", function (ply, com, args)
 		end
 		local ct = ChatText()
 		ct:Add(ply:Nick())
-		ct:Add(" changed team to ")
+		ct:Add(" a changé d'équipe pour les ")
 		ct:Add(team.GetName(newteam), team.GetColor(newteam))
 		ct:SendAll()
 
@@ -36,12 +36,12 @@ concommand.Add("car_jointeam", function (ply, com, args)
 			end
 			local ct = ChatText()
 			ct:Add(ply:Nick())
-			ct:Add(" changed team to ")
+			ct:Add(" a changé d'équipe pour les ")
 			ct:Add(team.GetName(newteam), team.GetColor(newteam))
 			ct:SendAll()
 		else
 			local ct = ChatText()
-			ct:Add("Team full, you cannot join")
+			ct:Add("Équipe complète , vous ne pouvez pas la joindre.")
 			ct:Send(ply)
 		end
 
@@ -57,7 +57,7 @@ function GM:CheckTeamBalance()
 		if diff < -1 || diff > 1 then // teams must be off by more than 2 for team balance
 			self.TeamBalanceTimer = CurTime() + 30 // balance in 30 seconds
 			for k,ply in pairs(player.GetAll()) do
-				ply:ChatPrint("Auto team balance in 30 seconds")
+				ply:ChatPrint("Équilibrage automatique des équipes dans 30 secondes.")
 			end
 		end
 	end
@@ -85,7 +85,7 @@ function GM:BalanceTeams(nokill)
 			end
 			local ct = ChatText()
 			ct:Add(ply:Nick())
-			ct:Add(" team balanced to ")
+			ct:Add("  à éter équilibrée dans l'équipe des ")
 			ct:Add(team.GetName(smallerTeam), team.GetColor(smallerTeam))
 			ct:SendAll()
 			diff = diff - 2
@@ -102,6 +102,6 @@ function GM:SwapTeams()
 		end
 	end
 	local ct = ChatText()
-	ct:Add("Teams have been swapped", Color(50, 220, 150))
+	ct:Add("Les équipes ont été échangés.", Color(50, 220, 150))
 	ct:SendAll()
 end

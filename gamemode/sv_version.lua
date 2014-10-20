@@ -1,5 +1,5 @@
-local url = "https://raw.githubusercontent.com/mechanicalmind/prophunters/master/prophunters.txt"
-local downloadlinks = "https://github.com/mechanicalmind/prophunters/releases or http://steamcommunity.com/sharedfiles/filedetails/?id=260275546"
+local url = "https://raw.githubusercontent.com/multigaming-community/prophunters/master/prophunters.txt"
+local downloadlinks = "https://github.com/Multigaming-community/prophunters/releases"
 
 
 function GM:CheckForNewVersion(ply)

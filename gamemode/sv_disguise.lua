@@ -27,7 +27,7 @@ function PlayerMeta:DisguiseAsProp(ent)
 	local hullxy, hullz = ent:GetPropSize()
 	if !self:CanFitHull(hullxy, hullxy, hullz) then
 		local ct = ChatText()
-		ct:Add("Not enough room to change", Color(255, 50, 50))
+		ct:Add("Il n'y a pas assez de place pour se transformer.", Color(255, 50, 50))
 		ct:Send(self)
 		return
 	end
@@ -58,10 +58,10 @@ function PlayerMeta:DisguiseAsProp(ent)
 	self:SetNWInt("disguiseSkin", ent:GetSkin())
 	self:SetNWBool("disguiseRotationLock", false)
 	self:SetColor(Color(255, 0, 0, 0))
-	self:SetRenderMode(RENDERMODE_NONE)
+	self:SetRenderMode(RENDERMODE_TRANSALPHA)
 	self:SetModel(ent:GetModel())
 	self:SetNoDraw(false)
-	self:DrawShadow(false)
+	-- self:DrawShadow(false)
 	GAMEMODE:PlayerSetNewHull(self, hullxy, hullz, hullz)
 
 
@@ -109,7 +109,7 @@ function PlayerMeta:UnDisguise()
 	self:SetColor(Color(255, 255, 255, 255))
 	self:SetNoDraw(false)
 	self:DrawShadow(true)
-	self:SetRenderMode(RENDERMODE_NORMAL)
+	self:SetRenderMode( RENDERMODE_NORMAL)
 	GAMEMODE:PlayerSetNewHull(self)
 	if self.OldPlayerModel then
 		self:SetModel(self.OldPlayerModel)
@@ -130,7 +130,7 @@ function PlayerMeta:DisguiseLockRotation()
 	local hullz = math.Round(maxs.z - mins.z)
 	if !self:CanFitHull(hullx, hully, hullz) then
 		local ct = ChatText()
-		ct:Add("Not enough room to lock rotation, move into a more open area", Color(255, 50, 50))
+		ct:Add("Il n'y a pas assez de place pour verrouiller la rotation.", Color(255, 50, 50))
 		ct:Send(self)
 		return
 	end
@@ -148,7 +148,7 @@ function PlayerMeta:DisguiseUnlockRotation()
 	local hullz = math.Round(maxs.z - mins.z)
 	if !self:CanFitHull(hullxy, hullxy, hullz) then
 		local ct = ChatText()
-		ct:Add("Not enough room to unlock rotation, move into a more open area", Color(255, 50, 50))
+		ct:Add("Il n'y a pas assez de place pour déverrouiller la rotation.", Color(255, 50, 50))
 		ct:Send(self)
 		return
 	end

@@ -83,7 +83,7 @@ function GM:SetupRound()
 	end
 	if c < 2 then
 		local ct = ChatText()
-		ct:Add("Not enough players to start round")
+		ct:Add("Il n'y a pas assez de joueurs pour commencer la partie.")
 		ct:SendAll()
 		self:SetGameState(0)
 		return
@@ -135,7 +135,7 @@ function GM:StartRound()
 
 	local c = 0
 	for k, ent in pairs(ents.GetAll()) do
-		if ent.IsDisguisableAs && ent:IsDisguisableAs() then
+		if ent:IsDisguisableAs() then
 			c = c + 1
 		end
 	end
