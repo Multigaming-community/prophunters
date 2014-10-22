@@ -427,27 +427,27 @@ end
 local awards = {
 	LastPropStanding = {
 		name = "Longest Survivor",
-		desc = "Prop who survived longest"
+		desc = "Le prop qui a survécu le plus longtemps."
 	},
 	LeastMovement = {
-		name = "Least Movement",
-		desc = "Prop who moved the least"
+		name = "Least movement",
+		desc = "Le prop qui a le moins bougé."
 	},
 	MostTaunts = {
-		name = "Most Taunts",
-		desc = "Prop who taunted the most"
+		name = "Most taunts",
+		desc = "Le joueur qui a fait le plus de taunt."
 	},
 	FirstHunterKill = {
-		name = "First Blood",
-		desc = "Hunter who had the first kill"
+		name = "First blood",
+		desc = "L'hunter qui a fait le premier kill."
 	},
 	MostKills = {
-		name = "Most Kills",
-		desc = "Hunter who had the most kills"
+		name = "Most kills.",
+		desc = "L'hunter qui a fait le plus de kills."
 	},
 	PropDamage = {
-		name = "Angriest Player",
-		desc = "Hunter who shot at props the most"
+		name = "Angriest Playerr",
+		desc = "L'hunter qui a le plus tiré."
 	}
 }
 

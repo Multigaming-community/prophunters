@@ -195,7 +195,7 @@ local function makeTeamList(parent, pteam)
 	head.perm = true
 	local col = Color(190, 190, 190)
 	function head:Paint(w, h)
-		draw.ShadowText("Nom", "RobotoHUD-15", 4, 0, col, 0)
+		draw.ShadowText("Pseudo", "RobotoHUD-15", 4, 0, col, 0)
 
 		draw.ShadowText("Ping", "RobotoHUD-15", w - 4, 0, col, 2)
 	end
@@ -297,7 +297,7 @@ function GM:ScoreboardShow()
 
 			draw.RoundedBox(4, 0, 0, w, h, col)
 
-			draw.ShadowText("Spectate", "RobotoHUD-15", w / 2, h / 2, colt, 1, 1)
+			draw.ShadowText("Spectateur", "RobotoHUD-15", w / 2, h / 2, colt, 1, 1)
 		end
 		function but:DoClick()
 			RunConsoleCommand("car_jointeam", 1)
@@ -336,14 +336,14 @@ function GM:DoScoreboardActionPopup(ply)
 	local actions = DermaMenu()
 
 	if ply:IsAdmin() then
-		local admin = actions:AddOption("Is an Admin")
+		local admin = actions:AddOption("est admin")
 		admin:SetIcon("icon16/shield.png")
 	end
 
 	if ply != LocalPlayer() then
-		local t = "Mute"
+		local t = "mute"
 		if ply:IsMuted() then
-			t = "Unmute"
+			t = "unmute"
 		end
 		local mute = actions:AddOption( t )
 		mute:SetIcon("icon16/sound_mute.png")
