@@ -25,7 +25,7 @@ net.Receive("kill_feed_add", function (len)
 	t.damageType = damageType
 	if bit.band(damageType, DMG_FALL) == DMG_FALL then
 		t.message = "pushed to their death"
-		t.messageSelf = "fell to their death"
+		t.messageSelf = "est mort en tombant"
 	end
 	if bit.band(damageType, DMG_BULLET) == DMG_BULLET then
 		t.message = table.Random({
@@ -36,12 +36,12 @@ net.Receive("kill_feed_add", function (len)
 		t.messageSelf = "shot themself"
 	end
 	if bit.band(damageType, DMG_BURN) == DMG_BURN then
-		t.message = "burned to death"
-		t.messageSelf = "burned to death"
+		t.message = "est mort brulé"
+		t.messageSelf = "est mort brulé"
 	end
 	if bit.band(damageType, DMG_CRUSH) == DMG_CRUSH then
-		t.message = "threw a prop at"
-		t.messageSelf = "was crushed to death"
+		t.message = "a lancé un objet sur"
+		t.messageSelf = "s'est fait écrasé"
 	end
 	if bit.band(damageType, DMG_BUCKSHOT) == DMG_BUCKSHOT then
 		t.message = table.Random({
@@ -50,14 +50,14 @@ net.Receive("kill_feed_add", function (len)
 		})
 	end
 	if bit.band(damageType, DMG_AIRBOAT) == DMG_AIRBOAT then
-		t.messageSelf = "shot too many props"
+		t.messageSelf = "a tiré sur tout ce qu'il voyait"
 	end
 	if damageType == 0 then
 		t.messageSelf = table.Random({
 			"fell over",
 			"tripped",
 			"couldn't take it",
-			"killed themself"
+			"s'est suicidé"
 		})
 	end
 	if IsValid(attacker) && attacker:IsPlayer() && attacker != ply then
@@ -66,7 +66,7 @@ net.Receive("kill_feed_add", function (len)
 		t.attackerColor = Color(col.x * 255, col.y * 255, col.z * 255)
 		Msg(attacker:Nick() .. " " .. (t.message or "killed") .. " " .. ply:Nick() .. "\n")
 	else
-		Msg(ply:Nick() .. " " .. (t.messageSelf or "killed themself") .. "\n")
+		Msg(ply:Nick() .. " " .. (t.messageSelf or "s'est suicidé") .. "\n")
 	end
 
 	table.insert(GAMEMODE.KillFeed, t)
@@ -95,7 +95,7 @@ function GM:DrawKillFeed()
 				draw.ShadowText(killed, "RobotoHUD-15", ScrW() - 4 - twp - twk, 4 + down * gap, color_white, 0)
 				draw.ShadowText(t.playerName, "RobotoHUD-15", ScrW() - 4 - twp, 4 + down * gap, t.playerColor, 0)
 			else
-				local killed = " " .. (t.messageSelf or "killed themself")
+				local killed = " " .. (t.messageSelf or "s'est suicidé")
 				local twk, thk = surface.GetTextSize(killed)
 
 				draw.ShadowText(killed, "RobotoHUD-15", ScrW() - 4 - twk, 4 + down * gap, color_white, 0)

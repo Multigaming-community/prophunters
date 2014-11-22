@@ -14,17 +14,17 @@ end
 
 
 addHelpText("Français", 1, [[
- • LES PROPS •
+ • LES OBJETS •
 	► Objectifs
-		Le but des props est de ce cacher des hunters et de ne pas se faire tuer.
+		Le but des "objets" est de se cacher des "chasseurs" et de ne pas se faire tuer.
 	► Les contrôles
-		CLIC GAUCHE : Transformation en objet
-		C : Bloque la rotation de votre objet
-		F3 : Ouvre le menu des taunt
+		CLIC GAUCHE : Se transformer en objet
+		C : Bloquer la rotation de votre objet
+		F3 : Ouvrir le menu des taunts
 
- • LES HUNTERS •
+ • LES CHASSEURS •
 	► Objectifs
-		L'objectif des hunters est de trouver et de tuer tous les props.
+		L'objectif des "chasseurs" est de trouver et de tuer tous les joueurs déguisés en objets.
 ]])
 
 addHelpText("English", 2, [[
@@ -76,7 +76,7 @@ local function openHelpScreen()
 			local tw,th = surface.GetTextSize(t)
 			draw.ShadowText(t, "RobotoHUD-25", 8, 2, Color(132, 199, 29), 0)
 
-			draw.ShadowText("plus d'information sur le mode de jeu", "RobotoHUD-L15", 8 + tw + 16, 2 + th * 0.90, Color(220, 220, 220), 0, 4)
+			draw.ShadowText("Plus d'information sur le mode de jeu", "RobotoHUD-L15", 8 + tw + 16, 2 + th * 0.90, Color(220, 220, 220), 0, 4)
 		end
 
 		local catlist = vgui.Create("DScrollPanel", menu)

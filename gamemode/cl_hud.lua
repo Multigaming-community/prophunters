@@ -54,9 +54,9 @@ function GM:HUDPaint()
 end
 
 local helpKeysProps = {
-	{"CLIC GAUCHE", "Se déguiser en objet"},
-	{"C", "Verouiller sa rotation"},
-	{"F3", "Ouvrir le menue des taunt"}
+	{"CLIC GAUCHE", "Se transformer en objet"},
+	{"C", "Bloquer votre rotation"},
+	{"F3", "Ouvrir le menu des taunts"}
 }
 
 
@@ -246,7 +246,7 @@ function GM:DrawHealth(ply)
 	if ply:IsDisguised() && ply:DisguiseRotationLocked() then
 		local fg = draw.GetFontHeight("RobotoHUD-15")
 		draw.ShadowText("ROTATION", "RobotoHUD-15", x + w + 20, y + h / 2 - fg / 2, color_white, 0, 1)
-		draw.ShadowText("VERROUILLER", "RobotoHUD-15", x + w + 20, y + h / 2 + fg / 2, color_white, 0, 1)
+		draw.ShadowText("VERROUILLEE", "RobotoHUD-15", x + w + 20, y + h / 2 + fg / 2, color_white, 0, 1)
 	end
 end
 
@@ -314,7 +314,7 @@ function GM:DrawRoundTimer()
 	if self:GetGameState() == 1 then
 		local time = math.ceil(30 - self:GetStateRunningTime())
 		if time > 0 then
-			draw.ShadowText("Les hunters vont être libérés dans...", "RobotoHUD-15", ScrW() / 2, ScrH() / 3 - draw.GetFontHeight("RobotoHUD-40") / 2, color_white, 1, 4)
+			draw.ShadowText("Les chasseurs vont être libérés dans...", "RobotoHUD-15", ScrW() / 2, ScrH() / 3 - draw.GetFontHeight("RobotoHUD-40") / 2, color_white, 1, 4)
 			draw.ShadowText(time, "RobotoHUD-40", ScrW() / 2, ScrH() / 3, color_white, 1, 1)
 		end
 	elseif self:GetGameState() == 2 then

@@ -188,7 +188,7 @@ function GM:OpenEndRoundMenu()
 	header:Dock(TOP)
 	header:SetFont("RobotoHUD-25")
 	header:SetTall(draw.GetFontHeight("RobotoHUD-25"))
-	header:SetText("Player List")
+	header:SetText("Liste des joueurs")
 	header:DockMargin(4, 2, 4, 2)
 
 	local plist = vgui.Create("DScrollPanel", listpnl)
@@ -255,7 +255,7 @@ function GM:OpenEndRoundMenu()
 	say:Dock(LEFT)
 	say:SetFont("RobotoHUD-15")
 	say:SetTextColor(Color(150, 150, 150))
-	say:SetText("Say:")
+	say:SetText("Dire:")
 	say:DockMargin(4, 0, 0, 0)
 	say:SizeToContentsX()
 
@@ -264,7 +264,7 @@ function GM:OpenEndRoundMenu()
 	entry:SetFont("RobotoHUD-15")
 	entry:SetTextColor(color_white)
 	function entry:OnEnter(...)
-		RunConsoleCommand("say", self:GetValue())
+		RunConsoleCommand("a dit", self:GetValue())
 		self:SetText("")
 		timer.Simple(0, function ()
 			menu:SetKeyboardInputEnabled(true)
@@ -332,7 +332,7 @@ function GM:OpenEndRoundMenu()
 	header:Dock(TOP)
 	header:SetFont("RobotoHUD-25")
 	header:SetTall(draw.GetFontHeight("RobotoHUD-25"))
-	header:SetText("Results")
+	header:SetText("Resultats")
 	header:DockMargin(4, 2, 4, 2)
 
 	local winner = vgui.Create("DLabel", respnl)
@@ -340,7 +340,7 @@ function GM:OpenEndRoundMenu()
 	winner:Dock(TOP)
 	winner:DockMargin(20, 20, 20, 20)
 	winner:SetTall(draw.GetFontHeight("RobotoHUD-45"))
-	winner:SetText("Props win!")
+	winner:SetText("Les Props gagne !")
 	winner:SetColor(team.GetColor(3))
 	winner:SetFont("RobotoHUD-45")
 
@@ -388,7 +388,7 @@ function GM:OpenEndRoundMenu()
 	header:Dock(TOP)
 	header:SetFont("RobotoHUD-25")
 	header:SetTall(draw.GetFontHeight("RobotoHUD-25"))
-	header:SetText("Map voting")
+	header:SetText("Vote pour la map")
 	header:DockMargin(4, 2, 4, 2)
 
 	local timeleft = vgui.Create("DPanel", votepnl)
@@ -399,7 +399,7 @@ function GM:OpenEndRoundMenu()
 		if GAMEMODE:GetGameState() == 4 then
 			local voteTime = GAMEMODE.MapVoteTime or 30
 			local time = math.max(0, voteTime - GAMEMODE:GetMapVoteRunningTime())
-			draw.SimpleText("Voting ends in " .. math.ceil(time), "RobotoHUD-20", w - 4, 0, col, 2)
+			draw.SimpleText("Les votes finissent dans " .. math.ceil(time), "RobotoHUD-20", w - 4, 0, col, 2)
 		end
 	end
 
@@ -426,27 +426,27 @@ end
 
 local awards = {
 	LastPropStanding = {
-		name = "Longest Survivor",
+		name = "Le survivant !",
 		desc = "Le prop qui a survécu le plus longtemps."
 	},
 	LeastMovement = {
-		name = "Least movement",
+		name = "Je ne bouge pas !",
 		desc = "Le prop qui a le moins bougé."
 	},
 	MostTaunts = {
-		name = "Most taunts",
+		name = "Prout prout, cui cui !",
 		desc = "Le joueur qui a fait le plus de taunt."
 	},
 	FirstHunterKill = {
-		name = "First blood",
+		name = "Premier kill !",
 		desc = "L'hunter qui a fait le premier kill."
 	},
 	MostKills = {
-		name = "Most kills.",
+		name = "J'aime ma collection de kills :)",
 		desc = "L'hunter qui a fait le plus de kills."
 	},
 	PropDamage = {
-		name = "Angriest Playerr",
+		name = "FUUUUUUUU !!! ",
 		desc = "L'hunter qui a le plus tiré."
 	}
 }
@@ -463,7 +463,7 @@ function GM:EndRoundMenuResults(res)
 		menu.WinningTeam:SetText(team.GetName(res.reason) .. " gagne !")
 		menu.WinningTeam:SetColor(team.GetColor(res.reason))
 	else
-		menu.WinningTeam:SetText("Round tied")
+		menu.WinningTeam:SetText("Egalité...")
 		menu.WinningTeam:SetColor(Color(150, 150, 150))
 	end
 

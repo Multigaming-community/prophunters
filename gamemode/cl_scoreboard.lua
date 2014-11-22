@@ -264,7 +264,7 @@ function GM:ScoreboardShow()
 		bottom:DockMargin(0, 8, 0, 0)
 
 		surface.SetFont("RobotoHUD-15")
-		local tw, th = surface.GetTextSize("Spectate")
+		local tw, th = surface.GetTextSize("Spectateur")
 
 		function bottom:Paint(w, h)
 			local c

@@ -158,7 +158,7 @@ function GM:EndRound(reason)
 	local winningTeam
 	if reason == 1 then
 		local ct = ChatText()
-		ct:Add("Tie everybody loses")
+		ct:Add("Egalité, tout le monde perd")
 		ct:SendAll()
 	elseif reason == 2 then
 		local ct = ChatText()
